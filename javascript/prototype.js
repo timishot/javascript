@@ -4,3 +4,5 @@ const myObject = {
 		console.log(`Greeting from ${this.city}`)
 	},
 };
+
+Object.getPrototypeOf(myObject);
