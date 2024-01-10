@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.bold {
+		    font-weight: bold;
+		    color: brown;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+</head>
+<body>
+
+	<div id="divText" ></div>
+	<div id="divHtml"></div>
+	<input type="text" id="txtTest" name="txtTest" value="Input field" />
+	<p>Paragraph 1</p>
+	<p>Paragraph 2</p>
+
+
+	<a href="javascript:void(0);" onclick="$('#olTestList1').append('<li>Appended item</li>');">Append</a>   
+	<a href="javascript:void(0);" onclick="$('#olTestList1').prepend('<li>Prepended item</li>');">Prepend</a>
+
+	<ol id="olTestList1">
+		<li>Existing item</li>
+		<li>Existing item</li>
+	</ol>
+	<p>Paragraph 3</p>
+	<a href="javascript:void(0);" onclick="ToggleClass(this);">Toggle class</a>
+
+	<script type="text/javascript">
+		$(function()
+		{
+			$("#divText").text("A dynamically set text");
+			$("#divHtml").html("<b><i>A dynamically set HTML string</i></b>");
+			$("#txtTest").attr("placeholder", "A dynamically set value");
+		});
+		$(function()
+		{
+			$("p").text(function(index, oldText) {
+			return "Existing text: " + oldText + ". New text: A dynamically set text (#" + index + ")";
+			});
+		});
+		function ToggleClass(sender)
+		{
+			
+			if($(sender).hasClass("bold"))
+				$(sender).removeClass("bold");
+			else
+				$(sender).addClass("bold");
+		}
+	</script>
+</body>
+</html>
