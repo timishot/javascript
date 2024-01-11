@@ -4,14 +4,17 @@
 // 	})
 // })
 
-document.querySelector("#toggle_header").addEventListener("click", toggleLog('header', 'red', 'green'));
+document.querySelector("#toggle_header").addEventListener("click", function (){
+	toggleLog('header', 'red', 'green')
+});
+
 const toggleLog = (element, classToremove, classToadd) =>{
-	let header = document.querySelector("header");
+	let header = document.querySelector(element);
 	if (header.classList.contains(classToremove)) {
-		element.classList.remove(classToremove)
-		element.classList.add(classToadd)
+		header.classList.remove(classToremove)
+		header.classList.add(classToadd)
 	} else {
-		element.classList.remove(classToadd)
-		element.classList.add(classToremove)
+		header.classList.remove(classToadd)
+		header.classList.add(classToremove)
 	}
 }
