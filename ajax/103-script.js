@@ -1,4 +1,5 @@
 $('document').ready(function () {
+	// it runs if only the webbrower is loaded
 	$('INPUT#btn_translate').click(translate);
 	$('INPUT#language_code').focus(function () {
 	  $(this).keydown(function (e) {
