@@ -9,6 +9,7 @@ $('document').ready(function () {
 	  });
 	});
 });
+//fix
 
 
 //translate      
